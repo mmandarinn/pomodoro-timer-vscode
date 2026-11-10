@@ -1,0 +1,40 @@
+{
+  "name": "vscode-pomodoro-timer",
+  "displayName": "Dev Pomodoro Timer",
+  "description": "Professional Pomodoro timer with full features",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Pomodoro Timer Settings",
+      "properties": {
+        "pomodoro.workDuration": { "type": "number", "default": 25 },
+        "pomodoro.shortBreakDuration": { "type": "number", "default": 5 },
+        "pomodoro.longBreakDuration": { "type": "number", "default": 15 },
+        "pomodoro.cyclesBeforeLongBreak": { "type": "number", "default": 4 }
+      }
+    },
+    "commands": [
+      { "command": "pomodoro.start", "title": "Pomodoro: Start" },
+      { "command": "pomodoro.pause", "title": "Pomodoro: Pause" },
+      { "command": "pomodoro.reset", "title": "Pomodoro: Reset" },
+      { "command": "pomodoro.skip_break", "title": "Pomodoro: Skip Break" },
+      { "command": "pomodoro.showStats", "title": "Pomodoro: Show Stats" },
+      { "command": "pomodoro.configure", "title": "Pomodoro: Configure Settings" }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^18.x.x",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.x.x"
+  }
+}
